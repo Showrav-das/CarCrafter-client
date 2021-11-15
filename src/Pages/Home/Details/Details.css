@@ -1,0 +1,28 @@
+.add-service form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-service form input,textarea{
+    width: 40%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid lightsalmon;
+}
+.add-service textarea{
+    margin-bottom: 10px;
+}
+
+.button-regular{
+    background-color: rgb(226, 70, 109);
+    color: white;
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.details{
+    /* margin: 0 ,auto; */
+}
