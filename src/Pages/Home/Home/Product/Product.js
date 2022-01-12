@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const { name,price, img,details,_id} = product;
+    const { name, price, img, details, _id } = product;
     return (
         <>
             <Grid item xs={2} sm={4} md={4}>

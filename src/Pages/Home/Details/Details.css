@@ -16,13 +16,10 @@
 }
 
 .button-regular{
-    background-color: rgb(226, 70, 109);
+    background-color: rgb(158, 144, 147);
     color: white;
     border-style: none;
     padding: 10px;
     border-radius: 10px;
     font-weight: 700;
-}
-.details{
-    /* margin: 0 ,auto; */
 }

@@ -34,6 +34,7 @@ const Dashboard = (props) => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { admin,logOut} = useAuth();
     let { path, url } = useRouteMatch();
+    const { _id } = useParams();
     // console.log(admin);
 
     const handleDrawerToggle = () => {
@@ -139,7 +140,7 @@ const Dashboard = (props) => {
                     <Route path={`${path}/addProducts`}>
                         <AddProduct />
                     </Route>
-                    <Route path={`${path}/payment`}>
+                    <Route path={`${path}/payment/:id`}>
                         <Payment />
                     </Route>
                     <Route path={`${path}/review`}>

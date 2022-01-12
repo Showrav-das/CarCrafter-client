@@ -1,16 +1,15 @@
 import { Container, Grid } from '@mui/material';
-import React,{useParams, useState} from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Details from '../Details/Details';
 import { Link } from 'react-router-dom';
 
 const Explore = ({ product }) => {
-    const { name, img,price, details ,_id} = product;
+    const { name, img,price, details,_id} = product;
     return (
         <>
             {/* <h2>explore page</h2> */}

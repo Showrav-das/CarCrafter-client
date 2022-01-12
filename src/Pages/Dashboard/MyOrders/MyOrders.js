@@ -7,9 +7,11 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import useAuth from '../../../Hooks/useAuth';
+import { Link, useParams } from 'react-router-dom';
 
 const MyOrders = () => {
-    const { user } = useAuth();
+  const { user } = useAuth();
+  
     const [products,setProducts]=useState([]);
     useEffect(()=>{
         const url=`https://dry-waters-58580.herokuapp.com/details?email=${user.email}`;
@@ -27,6 +29,7 @@ const MyOrders = () => {
             <TableCell>Band Name</TableCell>
             <TableCell>Cell Number</TableCell>
             <TableCell>City Name</TableCell>
+            <TableCell>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -46,6 +49,9 @@ const MyOrders = () => {
               </TableCell>
               <TableCell component="th" scope="row">
                 {row.number}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                <Link to={`/dashboard/payment/${row._id}`}><button className='button-regular'>Pay</button></Link>
               </TableCell>
             </TableRow>
           ))}
