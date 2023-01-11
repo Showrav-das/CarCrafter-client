@@ -7,7 +7,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
     const onSubmit = data => {
-        axios.post('https://dry-waters-58580.herokuapp.com/reviews', data)
+        axios.post('https://car-server-ssgi.onrender.com/reviews', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

@@ -12,7 +12,7 @@ const Details = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        axios.post('https://dry-waters-58580.herokuapp.com/details', data)
+        axios.post('https://car-server-ssgi.onrender.com/details', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -26,7 +26,7 @@ const Details = () => {
     // console.log("hiii");
     const [details, setDetails] = useState({});
     useEffect(() => {
-        fetch(`https://dry-waters-58580.herokuapp.com/products/${id}`)
+        fetch(`https://car-server-ssgi.onrender.com/products/${id}`)
             .then(res => res.json())
             .then(data => setDetails(data))
         // console.log(data)

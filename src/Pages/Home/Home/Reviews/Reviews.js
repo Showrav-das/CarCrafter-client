@@ -14,7 +14,7 @@ import SingleReview from '../Singlereview/SingleReview';
 const Reviews = () => {
     const [allReviews, setAllReviews] = useState([]);
     useEffect(() => {
-        fetch('https://dry-waters-58580.herokuapp.com/reviews')
+        fetch('https://car-server-ssgi.onrender.com/reviews')
         .then(res => res.json())
         .then(data => setAllReviews(data));
     },[])

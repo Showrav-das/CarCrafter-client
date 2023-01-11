@@ -17,7 +17,7 @@ const UseFirebase = () => {
     const registerFirebase = (email,password,name,history) => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then(() => {
                 setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
@@ -73,7 +73,7 @@ const UseFirebase = () => {
 
     // admin check
     useEffect(() => {
-        fetch(`https://dry-waters-58580.herokuapp.com/user/${user.email}`)
+        fetch(`https://car-server-ssgi.onrender.com/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.admin);
@@ -91,7 +91,7 @@ const UseFirebase = () => {
     }
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://dry-waters-58580.herokuapp.com/users', {
+        fetch('https://car-server-ssgi.onrender.com/users', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

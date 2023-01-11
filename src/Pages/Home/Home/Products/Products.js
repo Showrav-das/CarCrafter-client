@@ -10,7 +10,7 @@ import { Typography } from '@mui/material';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://dry-waters-58580.herokuapp.com/products')
+        fetch('https://car-server-ssgi.onrender.com/products')
         .then(res => res.json())
         .then(data => setProducts(data));
     },[])

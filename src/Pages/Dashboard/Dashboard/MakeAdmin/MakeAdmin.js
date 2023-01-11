@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdmin = e => {
         const user = { email };
-        fetch('https://dry-waters-58580.herokuapp.com/users/admin', {
+        fetch('https://car-server-ssgi.onrender.com/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
