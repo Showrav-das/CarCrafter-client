@@ -18,7 +18,9 @@ const Reviews = () => {
         .then(res => res.json())
         .then(data => setAllReviews(data));
     },[])
-
+    if (allReviews.length == 0) {
+    return <h4>Loading...</h4>
+}
     return (
         <div>
             <Typography variant="h3">

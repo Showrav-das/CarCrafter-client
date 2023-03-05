@@ -14,6 +14,9 @@ const Products = () => {
         .then(res => res.json())
         .then(data => setProducts(data));
     },[])
+    if (products.length == 0) {
+        return <h6>Loading...</h6>
+    }
 
     return (
         <>
