@@ -73,7 +73,7 @@ const UseFirebase = () => {
 
     // admin check
     useEffect(() => {
-        fetch(`https://car-server-ssgi.onrender.com/user/${user.email}`)
+        fetch(`https://car-rental-server-site-production.up.railway.app/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.admin);
@@ -91,7 +91,7 @@ const UseFirebase = () => {
     }
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://car-server-ssgi.onrender.com/users', {
+        fetch('https://car-rental-server-site-production.up.railway.app/users', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

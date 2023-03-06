@@ -10,7 +10,7 @@ import { Typography } from '@mui/material';
 const Explores = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://car-server-ssgi.onrender.com/products')
+        fetch('https://car-rental-server-site-production.up.railway.app/products')
         .then(res => res.json())
         .then(data => setProducts(data.slice(0,6)));
     },[])

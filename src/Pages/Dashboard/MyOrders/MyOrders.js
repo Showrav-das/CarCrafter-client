@@ -14,7 +14,7 @@ const MyOrders = () => {
   
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        const url=`https://car-server-ssgi.onrender.com/details?email=${user.email}`;
+        const url=`https://car-rental-server-site-production.up.railway.app/details?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));

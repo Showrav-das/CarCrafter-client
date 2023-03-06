@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        axios.post('https://car-server-ssgi.onrender.com/products', data)
+        axios.post('https://car-rental-server-site-production.up.railway.app/products', data)
           .then(res => {
             console.log(res);
             if (res.data.insertedId) {

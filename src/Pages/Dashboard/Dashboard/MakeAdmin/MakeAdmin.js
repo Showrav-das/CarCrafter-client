@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdmin = e => {
         const user = { email };
-        fetch('https://car-server-ssgi.onrender.com/users/admin', {
+        fetch('https://car-rental-server-site-production.up.railway.app/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
