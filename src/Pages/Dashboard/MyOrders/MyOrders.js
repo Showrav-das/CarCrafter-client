@@ -7,7 +7,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import useAuth from '../../../Hooks/useAuth';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MyOrders = () => {
   const { user } = useAuth();
@@ -45,10 +45,10 @@ const MyOrders = () => {
                 {row.serviceNAme}
               </TableCell>
               <TableCell component="th" scope="row">
-                {row.city}
+                {row.number}
               </TableCell>
               <TableCell component="th" scope="row">
-                {row.number}
+                {row.city}
               </TableCell>
               <TableCell component="th" scope="row">
                 <Link to={`/dashboard/payment/${row._id}`}><button className='button-regular'>Pay</button></Link>
