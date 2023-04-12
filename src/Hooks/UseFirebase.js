@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged,updateProfile} from "firebase/auth";
 import firebaseAuthentication from '../Pages/Login/Firebase/Firebase.init';
@@ -73,7 +72,7 @@ const UseFirebase = () => {
 
     // admin check
     useEffect(() => {
-        fetch(`https://car-rental-server-site-production.up.railway.app/user/${user.email}`)
+        fetch(`https://car-rental-server-site-production-a096.up.railway.app/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.admin);
@@ -91,7 +90,7 @@ const UseFirebase = () => {
     }
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://car-rental-server-site-production.up.railway.app/users', {
+        fetch('https://car-rental-server-site-production-a096.up.railway.app/users', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

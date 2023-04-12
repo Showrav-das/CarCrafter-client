@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
+import {Table,Button} from '@mui/material';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -14,11 +14,29 @@ const MyOrders = () => {
   
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        const url=`https://car-rental-server-site-production.up.railway.app/details?email=${user.email}`;
+        const url=`http://localhost:5000/details?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));
-    },[])
+    }, [])
+  const deleteProduct = (id) => {
+    console.log(id);
+    const proceed = window.confirm('Are you want to delete?');
+    if (proceed) {
+      fetch(`http://localhost:5000/details/${id}`, {
+        method: "DELETE"
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.acknowledged) {
+            alert("Deleted sucessfully")
+            const findItem = products.filter(product => product._id != id);
+            setProducts(findItem);
+          }
+        })
+    }
+  }
     return (
         <div>
             <TableContainer component={Paper}>
@@ -35,7 +53,7 @@ const MyOrders = () => {
         <TableBody>
           {products.map((row) => (
             <TableRow
-              key={row.name}
+              key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
@@ -51,7 +69,10 @@ const MyOrders = () => {
                 {row.city}
               </TableCell>
               <TableCell component="th" scope="row">
-                <Link to={`/dashboard/payment/${row._id}`}><button className='button-regular'>Pay</button></Link>
+                <Link to={`/dashboard/payment/${row._id}`}>
+                  <button className='button-regular' >PAY</button>
+                </Link>
+                  <Button onClick={()=>deleteProduct(row._id)} variant="outlined" color="error" sx={{m:'10px'}}>Cancel</Button>
               </TableCell>
             </TableRow>
           ))}

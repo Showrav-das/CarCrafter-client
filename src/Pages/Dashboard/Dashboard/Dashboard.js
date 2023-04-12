@@ -26,6 +26,8 @@ import AddProduct from './AddProduct/AddProduct';
 import Payment from './Payment/Payment';
 import Review from './Review/Review';
 import ManageAllOrder from './ManageAllOrder/ManageAllOrder';
+import EditProduct from './ManageAllOrder/EditProduct';
+//import EditProduct from './ManageAllOrder/EditProduct';
 
 const drawerWidth = 240;
 
@@ -34,7 +36,7 @@ const Dashboard = (props) => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { admin,logOut} = useAuth();
     let { path, url } = useRouteMatch();
-    const { _id } = useParams();
+    const { id } = useParams();
     // console.log(admin);
 
     const handleDrawerToggle = () => {
@@ -148,6 +150,9 @@ const Dashboard = (props) => {
                     </Route>
                     <Route path={`${path}/manageAll`}>
                         <ManageAllOrder/>
+                    </Route>
+                    <Route path={`${path}/edit/:id`}>
+                        <EditProduct/>
                     </Route>
                 </Switch>
                 </Box>
