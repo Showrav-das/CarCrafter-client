@@ -6,7 +6,7 @@ const Payment = () => {
     const { id } = useParams();
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/details/${id}`)
+        fetch(`https://car-rental-server-site-production-a096.up.railway.app/details/${id}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

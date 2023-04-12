@@ -9,7 +9,7 @@ import { Typography } from '@mui/material';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://car-rental-server-site-production-a096.up.railway.app/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

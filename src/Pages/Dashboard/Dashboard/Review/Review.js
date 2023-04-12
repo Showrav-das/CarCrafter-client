@@ -7,7 +7,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://car-rental-server-site-production-a096.up.railway.app/reviews', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

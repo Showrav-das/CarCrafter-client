@@ -14,7 +14,7 @@ import SingleReview from '../Singlereview/SingleReview';
 const Reviews = () => {
     const [allReviews, setAllReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://car-rental-server-site-production-a096.up.railway.app/reviews')
         .then(res => res.json())
         .then(data => setAllReviews(data));
     },[])
