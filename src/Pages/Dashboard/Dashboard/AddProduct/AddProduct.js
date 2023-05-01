@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        axios.post('https://car-rental-server-site-production-a096.up.railway.app/products', data)
+        axios.post('http://localhost:5000/products', data)
           .then(res => {
             console.log(res);
             if (res.data.insertedId) {
@@ -17,7 +17,7 @@ const AddProduct = () => {
     }
     return (
         <div className="add-service">
-        <h2 className="text-success">Add A Food</h2>
+        <h2 className="text-success">Add a brand new Car</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input {...register("name", { required: true, maxLength: 20 })} placeholder="Service Name" />
             <textarea {...register("details")} placeholder="Details" />

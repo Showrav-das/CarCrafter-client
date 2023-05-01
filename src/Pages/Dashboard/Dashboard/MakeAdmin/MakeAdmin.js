@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdmin = e => {
         const user = { email };
-        fetch('https://car-rental-server-site-production-a096.up.railway.app/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

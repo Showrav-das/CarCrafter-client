@@ -26,7 +26,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Car Rental 
+            Car Point 
           </Typography>
           <NavLink to="/home"><Button style={{color:"white",background:"black",textDecoration:"none"}}>Home</Button></NavLink>
           <NavLink to="/explores"><Button style={{color:"white",background:"black",textDecoration:"none",marginLeft:"3px"}}>Products</Button></NavLink>

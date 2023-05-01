@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Table,Button} from '@mui/material';
+import {Table,Button, Typography} from '@mui/material';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -14,7 +14,7 @@ const MyOrders = () => {
   
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        const url=`https://car-rental-server-site-production-a096.up.railway.app/details?email=${user.email}`;
+        const url=`http://localhost:5000/details?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));
@@ -23,7 +23,7 @@ const MyOrders = () => {
     console.log(id);
     const proceed = window.confirm('Are you want to delete?');
     if (proceed) {
-      fetch(`https://car-rental-server-site-production-a096.up.railway.app/details/${id}`, {
+      fetch(`http://localhost:5000/details/${id}`, {
         method: "DELETE"
       })
         .then(res => res.json())
@@ -41,15 +41,23 @@ const MyOrders = () => {
         <div>
             <TableContainer component={Paper}>
       <Table aria-label="simple table">
+              {
+                products.length ?
         <TableHead style={{background:"#E3D9D4"}}>
-          <TableRow>
-            <TableCell>Customer Name</TableCell>
-            <TableCell>Band Name</TableCell>
-            <TableCell>Cell Number</TableCell>
-            <TableCell>City Name</TableCell>
-            <TableCell>Action</TableCell>
-          </TableRow>
-        </TableHead>
+                <TableRow>
+                <TableCell>Customer Name</TableCell>
+                <TableCell>Band Name</TableCell>
+                <TableCell>Cell Number</TableCell>
+                <TableCell>City Name</TableCell>
+                <TableCell>Action</TableCell>
+                  </TableRow> 
+            </TableHead>
+            :
+                  <Typography variant="body1" gutterBottom>
+                  There are no orders in yours. Please <Link to="/explores">go back to explore's page.</Link>
+            </Typography>
+          }
+            
         <TableBody>
           {products.map((row) => (
             <TableRow
