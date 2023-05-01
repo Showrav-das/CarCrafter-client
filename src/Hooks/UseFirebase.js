@@ -72,7 +72,7 @@ const UseFirebase = () => {
 
     // admin check
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://car-rental-server-site-production-a096.up.railway.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.admin);
@@ -90,7 +90,7 @@ const UseFirebase = () => {
     }
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-rental-server-site-production-a096.up.railway.app/users', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

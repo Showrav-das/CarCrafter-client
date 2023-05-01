@@ -21,7 +21,7 @@ const Review = () => {
     const updateData = { ...data };
       updateData.rating = rating;
       console.log(updateData);
-        axios.post('http://localhost:5000/reviews',await updateData)
+        axios.post('https://car-rental-server-site-production-a096.up.railway.app/reviews',await updateData)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

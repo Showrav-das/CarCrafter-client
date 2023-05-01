@@ -14,7 +14,7 @@ const MyOrders = () => {
   
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        const url=`http://localhost:5000/details?email=${user.email}`;
+        const url=`https://car-rental-server-site-production-a096.up.railway.app/details?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));
@@ -23,7 +23,7 @@ const MyOrders = () => {
     console.log(id);
     const proceed = window.confirm('Are you want to delete?');
     if (proceed) {
-      fetch(`http://localhost:5000/details/${id}`, {
+      fetch(`https://car-rental-server-site-production-a096.up.railway.app/details/${id}`, {
         method: "DELETE"
       })
         .then(res => res.json())

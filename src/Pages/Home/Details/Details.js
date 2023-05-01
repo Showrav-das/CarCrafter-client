@@ -23,7 +23,7 @@ const Details = () => {
         //console.log(a);
         //console.log(data.city);
         //console.log(data);
-        axios.post('http://localhost:5000/details', a)
+        axios.post('https://car-rental-server-site-production-a096.up.railway.app/details', a)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -37,7 +37,7 @@ const Details = () => {
     // console.log(id);
     // console.log("hiii");
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://car-rental-server-site-production-a096.up.railway.app/products/${id}`)
             .then(res => res.json())
             .then(data => setDetails(data))
         // console.log(data)

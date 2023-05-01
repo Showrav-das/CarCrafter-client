@@ -14,14 +14,14 @@ const ManageAllOrder = () => {
   const { user } = useAuth();
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://car-rental-server-site-production-a096.up.railway.app/products')
         .then(res => res.json())
         .then(data => setProducts(data));
     },[])
 
   const deleteBtn = (id) => {
     //console.log(id);
-    fetch(`http://localhost:5000/products/${id}`,
+    fetch(`https://car-rental-server-site-production-a096.up.railway.app/products/${id}`,
       {
         method: "DELETE"
       })

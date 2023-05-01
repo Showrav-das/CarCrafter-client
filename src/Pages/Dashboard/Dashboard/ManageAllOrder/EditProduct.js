@@ -8,7 +8,7 @@ const EditProduct = () => {
     const [data, setData] = useState([]);
     const [dat, setDat] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://car-rental-server-site-production-a096.up.railway.app/products/${id}`)
         .then(res => res.json())
         .then(data => setData(data));
     },[])
