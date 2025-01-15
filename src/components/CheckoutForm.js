@@ -11,8 +11,11 @@ import { Alert, Box, Button, Paper, Typography } from "@mui/material";
 
 console.log("Stripe Key:", process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-
+const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
+if (!stripeKey) {
+  throw new Error("Stripe public key is missing");
+}
+const stripePromise = loadStripe(stripeKey);
 function CheckoutForm({ amount, title }) {
   const stripe = useStripe();
   const elements = useElements();
