@@ -11,14 +11,7 @@ import {
 import Box from "@mui/material/Box";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import logIn from "../../../images/log-in.jpg";
 import Header from "../../../Shared/Navigation/Header";
-
-const background = {
-  background: `url(${logIn})`,
-  height: "600px",
-  backgroundBlendMode: " darken, luminosity",
-};
 
 const Login = () => {
   const [loginData, setloginData] = useState({});

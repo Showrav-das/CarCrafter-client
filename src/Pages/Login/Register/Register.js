@@ -1,19 +1,18 @@
-import React, { useState } from "react";
 import {
+  Alert,
   Box,
-  Grid,
-  Container,
   Button,
+  CircularProgress,
+  Container,
+  Grid,
+  Paper,
   TextField,
   Typography,
-  CircularProgress,
-  Alert,
-  Paper,
-  Avatar,
 } from "@mui/material";
+import React, { useState } from "react";
 // import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import useAuth from "../../../Hooks/useAuth";
 import { NavLink, useHistory } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 import Header from "../../../Shared/Navigation/Header";
 import RegisterImg from "../../../images/register.jpg";
 

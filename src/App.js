@@ -1,50 +1,55 @@
-import './App.css';
-import { Route,BrowserRouter as Router, Switch } from 'react-router-dom';
-import Home from './Pages/Home/Home/Home';
-import Products from './Pages/Home/Home/Products/Products';
-import Details from './Pages/Home/Details/Details';
-import Explores from './Pages/Home/Explores/Explores';
-import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import Login from './Pages/Login/Login/Login';
-import Register from './Pages/Login/Register/Register';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import Footer from './Shared/Footer/Footer';
+import "./App.css";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import Home from "./Pages/Home/Home/Home";
+import Products from "./Pages/Home/Home/Products/Products";
+import Details from "./Pages/Home/Details/Details";
+import Explores from "./Pages/Home/Explores/Explores";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+
+import ContactForm from "./Pages/Home/Home/Contact/Contact";
+
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-        {/* <Home/> */}
-        <Switch>
-          <Route path="/home">
-          <Home/>
+          {/* <Home/> */}
+          <Switch>
+            <Route path="/home">
+              <Home />
             </Route>
-          <Route path="/products">
-          <Explores/>
-          </Route>
-          <Route path="/explores">
-          <Products/>
-          </Route>
-          <PrivateRoute path="/dashboard">
-          <Dashboard/>
-          </PrivateRoute>
-          <Route path="/login">
-          <Login/>
-          </Route>
-          <Route path="/register">
-          <Register/>
-          </Route>
-          <PrivateRoute path="/details/:id">
-          <Details/>
-          </PrivateRoute>
-          <Route exact path="/">
-          <Home/>
+            <Route path="/products">
+              <Explores />
+            </Route>
+            <Route path="/explores">
+              <Products />
+            </Route>
+            <Route path="/contact">
+              <ContactForm />
+            </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <PrivateRoute path="/details/:id">
+              <Details />
+            </PrivateRoute>
+            <Route exact path="/">
+              <Home />
             </Route>
           </Switch>
-     </Router>
-     </AuthProvider>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

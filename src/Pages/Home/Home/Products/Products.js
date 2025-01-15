@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import Product from "../Product/Product";
 import Header from "../../../../Shared/Navigation/Header";
 import Footer from "../../../../Shared/Footer/Footer";
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -13,27 +13,32 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  if (products.length == 0) {
-    return <h6>Loading...</h6>;
-  }
 
   return (
     <>
       <Header />
-      <Typography variant="h2" color="#ff9800">
-        Products
-      </Typography>
-      <Box sx={{ flexGrow: 1, mt: 5 }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          gutterBottom
+          align="center"
+          sx={{ mb: 6 }}
         >
-          {products.map((product) => (
-            <Product product={product}></Product>
-          ))}
-        </Grid>
-      </Box>
+          Our Products
+        </Typography>
+        {products.length == 0 ? (
+          <h6>Loading...</h6>
+        ) : (
+          <Grid container spacing={4}>
+            {products.map((product) => (
+              <Grid item key={product.id} xs={12} sm={6} md={4}>
+                <Product product={product} />
+              </Grid>
+            ))}
+          </Grid>
+        )}
+      </Container>
       <Footer />
     </>
   );

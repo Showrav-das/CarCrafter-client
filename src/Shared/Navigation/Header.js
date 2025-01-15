@@ -44,7 +44,11 @@ const Header = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, textAlign: "left" }}
+          >
             Car Crafter
           </Typography>
 
@@ -63,6 +67,26 @@ const Header = () => {
               style={{ textDecoration: "none", color: "white" }}
             >
               <Button color="inherit">Products</Button>
+            </NavLink>
+            {user?.email && (
+              <NavLink
+                to="/dashboard"
+                style={{
+                  color: "white",
+                  // background: "black",
+                  textDecoration: "none",
+                  margin: "3px",
+                }}
+              >
+                {" "}
+                <MenuItem>Dashboard</MenuItem>
+              </NavLink>
+            )}
+            <NavLink
+              to="/contact"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <Button color="inherit">Contact Us</Button>
             </NavLink>
 
             {user?.email ? (
@@ -92,6 +116,7 @@ const Header = () => {
                 >
                   <MenuItem>{user.displayName || user.email}</MenuItem>
                   <Divider />
+
                   <MenuItem onClick={logOut}>Logout</MenuItem>
                 </Menu>
               </>
@@ -148,7 +173,21 @@ const Header = () => {
                 </NavLink>
               </MenuItem>
               {user?.email ? (
-                <MenuItem onClick={logOut}>Logout</MenuItem>
+                <div>
+                  <MenuItem onClick={logOut}>Logout</MenuItem>
+                  <NavLink
+                    to="/dashboard"
+                    style={{
+                      color: "black",
+                      // background: "black",
+                      textDecoration: "none",
+                      margin: "3px",
+                    }}
+                  >
+                    {" "}
+                    <MenuItem>Dashboard</MenuItem>
+                  </NavLink>
+                </div>
               ) : (
                 <>
                   <MenuItem onClick={handleMobileClose}>
