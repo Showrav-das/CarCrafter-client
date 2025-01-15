@@ -131,7 +131,6 @@ export default function Footer() {
           <Grid item xs={12} sm={6} md={3}>
             <SectionTitle>MORE</SectionTitle>
             <FooterLink>Car Compare</FooterLink>
-            <FooterLink>Bike Compare</FooterLink>
             <FooterLink>News and Reviews</FooterLink>
             <FooterLink>Warranty and Flash Deal</FooterLink>
           </Grid>

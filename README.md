@@ -8,3 +8,5 @@ The Products collection contains detailed information about the latest cars, inc
         <li>The Reviews collection holds client feedback about the website.</li>
         <li>The Dashboard data is dynamically loaded from the Products collection.</li>
     </ul>
+<p>Admin user name: admin@admin.com pass: 123456</p>
+<p>Admin user name: showravdas8@.com pass: 123456</p>
